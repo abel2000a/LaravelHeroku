@@ -54,3 +54,9 @@ Route::get('rol/show/{id}',"RolController@show");
 
 Route::get('mostrar/index',"MostrarController@index");
 Route::get('mostrar/show/{id}',"MostrarController@show"); 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/auth/redirect/{provider}', 'SocialController@redirect');
+Route::get('/callback/{provider}', 'SocialController@callback');

@@ -21,7 +21,7 @@ class MostrarController extends Controller
         ->join('persona' , 'persona.persona_id' , 'egresado.persona_id')
         ->join('escuela_prof','escuela_prof.escuela_prof_id','egresado.escuela_prof_id')
         ->join('facultad','facultad.facultad_id','escuela_prof.facultad_id')
-        ->select('persona.escuela_prof_id','egresado.egresado_codigo','persona.persona_nombre','persona_apellido_pat','facultad.facultad_nombre','facultad.facultad_sede')
+        ->select('persona.persona_id','egresado.egresado_codigo','persona.persona_nombre','persona_apellido_pat','facultad.facultad_nombre','facultad.facultad_sede')
         ->get();
         return response()->json($egresa);
     }
